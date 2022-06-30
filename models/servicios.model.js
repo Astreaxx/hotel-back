@@ -14,7 +14,7 @@ const Servicios = connection.sequelize.define(
     precio: Sequelize.INTEGER,
     img: Sequelize.STRING,
     descripcion: Sequelize.STRING,
-    estado: Sequelize.BOOLEAN,
+    estado: Sequelize.NUMBER,
   },
   {
     tableName: 'servicios',

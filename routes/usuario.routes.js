@@ -6,6 +6,8 @@ const usuario = new Usuario()
 
 /* Get categories list */
 router.get('/', usuario.list)
+router.get('/list1', usuario.list1)
+router.get('/list2/:id', usuario.list2)
 /* Get category by id */
 router.get('/:id', usuario.get)
 /* Update category */

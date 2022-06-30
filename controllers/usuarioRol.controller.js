@@ -19,6 +19,22 @@ module.exports = class paisController {
     res.send(usuarioRol)
   }
 
+  
+  async delete2 (req, res, next) {
+    const id = req.params.id
+
+    const destroyResult = await UsuarioRol.destroy({
+      where: {
+        idUsuarioRol: id
+      }
+    })
+    if (destroyResult) {
+      return res.sendStatus(204)
+    }
+
+    res.status(500)
+  }
+
   async update (req, res, next) {
     const id = req.params.id
     const {

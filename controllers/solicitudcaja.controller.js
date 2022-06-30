@@ -1,4 +1,4 @@
-const Caja = require('../models/caja.model')
+const Caja = require('../models/solicitudcaja.model')
 
 module.exports = class cajaController {
   async list (req, res, next) {
@@ -12,18 +12,6 @@ module.exports = class cajaController {
       {
         where: {
           idCaja: id
-        }
-      }
-    )
-    res.send(caja)
-  }
-
-  async get2 (req, res, next) {
-    const id = req.params.id
-    const caja = await Caja.findAll(
-      {
-        where: {
-          idusuario: id
         }
       }
     )

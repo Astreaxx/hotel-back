@@ -15,4 +15,6 @@ router.post('/create', usuarioRol.create)
 /* Delete category */
 router.put('/cambioEstado/:id', usuarioRol.delete)
 
+router.delete('/delete/:id', usuarioRol.delete2)
+
 module.exports = router

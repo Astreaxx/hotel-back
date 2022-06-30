@@ -11,6 +11,18 @@ module.exports = class equipamientoController {
     const servicio = await Servicio.findByPk(id)
     res.send(servicio)
   }
+  async list2 (req, res, next) {
+    const id = req.params.id   
+    const servicio = await Servicio.findAll(
+      {
+        where: {
+          estado: 1
+        }
+      }
+    )
+    res.send(servicio)
+  }
+
 
   async update (req, res, next) {
     const id = req.params.id

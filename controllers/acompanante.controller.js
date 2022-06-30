@@ -12,7 +12,7 @@ module.exports = class AcompananteController {
     const acompanante = await Acompanante.findAll(
       {
         where: {
-          idAcompanante: id
+          idreserva: id
         }
       }
     )
@@ -24,13 +24,11 @@ module.exports = class AcompananteController {
       Nombre,
       Edad,
       Identificacion,
-      Telefono,
-      idusuario,
+      Telefono,    
       idreserva
     } = req.body
     // eslint-disable-next-line max-len
-    if (!idusuario) return res.status(400).send({ message: 'El Usuario es requerido' })
-
+   
     // eslint-disable-next-line max-len
     if (!idreserva) return res.status(400).send({ message: 'La Reserva  es requerido' })
     const acompanant = await acompanante.create( {
@@ -38,7 +36,6 @@ module.exports = class AcompananteController {
       Edad,
       Identificacion,
       Telefono,
-      idusuario,
       idreserva
     })
     res.status(201).send(acompanant)

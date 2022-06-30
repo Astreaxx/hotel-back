@@ -7,6 +7,28 @@ module.exports = class paisController {
     const list = await Usuario.findAll()
     res.send(list)
   }
+  async list1 (req, res, next) {
+   
+    const usuario = await Usuario.findAll(
+      {
+        where: {
+          trabajador: 1
+        }
+      }
+    )
+    res.send(usuario)
+  }
+  async list2 (req, res, next) {
+    const id = req.params.id   
+    const usuario = await Usuario.findAll(
+      {
+        where: {
+          idUsuario: id
+        }
+      }
+    )
+    res.send(usuario)
+  }
 
   async get (req, res, next) {
     const id = req.params.id

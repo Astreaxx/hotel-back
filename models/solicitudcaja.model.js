@@ -4,27 +4,22 @@ const connection = new Connection()
 const Caja = connection.sequelize.define(
   'Caja',
   {
-    idCaja: {
+    idsolicitud: {
       type: Sequelize.INTEGER,
       primaryKey: true,
       autoIncrement: true
     },
-    idusuario: Sequelize.STRING,
-    nombre_caja: Sequelize.STRING,
-    descripcion: Sequelize.STRING,
+    idusuario: Sequelize.INTEGER,
+    idCaja: Sequelize.INTEGER,
     fecha_apertura: Sequelize.STRING,
-    cantidad_inicial: Sequelize.STRING,
-    cantidad_cierre: Sequelize.STRING,
-    monto: Sequelize.FLOAT,
-    ubicacion: Sequelize.STRING,
+    descripcion: Sequelize.STRING,
+    descripcion: Sequelize.STRING,
+    cantidad_inicial: Sequelize.STRING,    
     estado: Sequelize.BOOLEAN
 
   },
   {
-    tableName: 'caja',
-    timestamps: true,
-    createdAt: 'created_at',
-    updatedAt: 'updated_at'
+    tableName: 'solicitudcaja',
   }
 )
 module.exports = Caja

@@ -14,7 +14,43 @@ module.exports = class equipamientoController {
     const habitaciones = await Habitaciones.findAll(
       {
         where: {
-          estado: disponible
+          estado: !disponible
+        }
+      }
+    )
+    res.send(habitaciones)
+  }
+
+  async list1 (req, res, next) {
+    const oc = 'Ocupada'
+    const habitaciones = await Habitaciones.findAll(
+      {
+        where: {
+          estado: oc
+        }
+      }
+    )
+    res.send(habitaciones)
+  }
+
+  async list2 (req, res, next) {
+    const re = 'Reservadas'
+    const habitaciones = await Habitaciones.findAll(
+      {
+        where: {
+          estado: re
+        }
+      }
+    )
+    res.send(habitaciones)
+  }
+
+  async list3 (req, res, next) {
+    const limpieza = 'Limpieza'
+    const habitaciones = await Habitaciones.findAll(
+      {
+        where: {
+          estado: limpieza
         }
       }
     )
@@ -120,28 +156,4 @@ module.exports = class equipamientoController {
 
     res.status(500)
   }
-
-  // async delete (req, res, next) {
-  //   const id = req.params.id
-  //   const {
-  //     estado
-  //   } = req.body
-  //   if (!id) return res.status(400).send({ message: 'id es requerido' })
-  //   // if (!estado) return res.status(400).send({ message: 'El estado es requerido' })
-  //   const destroyResult = await Reserva.update(
-  //     {
-  //       estado
-  //     },
-  //     {
-  //       where: {
-  //         idreserva: id
-  //       }
-  //     }
-  //   )
-  //   if (destroyResult) {
-  //     return res.sendStatus(204)
-  //   }
-
-  //   res.status(500)
-  // }
 }

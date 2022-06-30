@@ -14,7 +14,6 @@ const acompanante = connection.sequelize.define(
     Edad: Sequelize.INTEGER,
     Identificacion: Sequelize.STRING,
     Telefono: Sequelize.INTEGER,
-    idusuario: Sequelize.INTEGER,
     idreserva: Sequelize.INTEGER
   },
   {

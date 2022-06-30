@@ -6,6 +6,9 @@ const habitacion = new Habitacion()
 
 /* Get categories list */
 router.get('/', habitacion.list)
+router.get('/list1', habitacion.list1)
+router.get('/list2', habitacion.list2)
+router.get('/list3', habitacion.list3)
 
 router.get('/obtener', habitacion.obtenerTodos)
 /* Get category by id */

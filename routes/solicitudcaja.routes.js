@@ -8,7 +8,6 @@ const caja = new Caja()
 router.get('/', caja.list)
 /* Get category by id */
 router.get('/:id', caja.get)
-router.get('/get/:id', caja.get2)
 /* Update category */
 router.put('/update/:id', caja.update)
 /* Create category */

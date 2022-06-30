@@ -6,6 +6,7 @@ const servicio = new Servicios()
 
 /* Get categories list */
 router.get('/', servicio.list)
+router.get('/list', servicio.list2)
 /* Get category by id */
 router.get('/:id', servicio.get)
 /* Update category */
